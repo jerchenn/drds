@@ -53,6 +53,10 @@ p{margin:0 auto;max-width:62ch}
 .title{display:grid;gap:6px;justify-items:center}
 .title .small{font-size:clamp(.85rem,2vw,1.1rem);letter-spacing:.4em;padding-left:.4em;color:var(--rose);text-transform:uppercase;font-weight:300}
 .title .by{font-size:1rem;color:var(--ink-warm)}
+.slide .head{display:grid;gap:8px;justify-items:center}
+.slide h2{font-size:1.5rem}
+.quote{font-style:italic;font-size:1.1rem;max-width:62ch;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 6px;color:var(--ink);margin:0 auto;text-align:left}
+.quote .who{display:block;text-align:right;font-style:normal;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-top:6px}
 .btn{font:inherit;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;padding:9px 20px;border:1px solid var(--trim);background:var(--label-bg);color:var(--rose);cursor:pointer;border-radius:999px;text-decoration:none;display:inline-block}
 .btn.primary{background:var(--rose);color:var(--neutral)}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
@@ -71,81 +75,105 @@ p{margin:0 auto;max-width:62ch}
 footer{margin-top:34px;margin-inline:-16px;background:var(--pink);color:var(--rose);border-top:1px solid var(--trim);padding:18px 16px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
 footer .orn{color:var(--trim-dk);letter-spacing:.5em;padding-left:.5em}
 footer a{color:var(--rose);text-decoration:none;border-bottom:1px solid var(--trim)}
+
+/* slide scrolling: each block is a snap target, arrow keys move between blocks, a counter shows the position */
+html{scroll-snap-type:y proximity;scroll-padding-top:16px}
+.wrap>header.frame,.wrap>section.frame{scroll-snap-align:start;scroll-margin-top:16px;min-height:calc(100vh - 56px);align-content:center}
+.counter{position:fixed;right:16px;bottom:16px;z-index:9;font-family:var(--mono);font-size:11px;letter-spacing:.2em;padding:6px 12px;border:1px solid var(--trim);border-radius:999px;background:var(--label-bg);color:var(--rose)}
+@media (max-width:560px){.wrap>header.frame,.wrap>section.frame{min-height:0}}
 </style>
 
 <div class="wrap">
 
-<header class="frame" aria-label="Title">
+<header class="frame slide" aria-label="Slide 1">
   <div class="hero"><img src="img/arch.webp" alt="A tunnel of apple trees trained over iron arches, red apples hanging from the canopy, grass path beneath"></div>
   <p class="aux credit">Photograph: BBC</p>
   <div class="title">
-    <div class="small">DRDS · Michaelmas · Week 7</div>
+    <div class="small">DRDS · Michaelmas · Week 6 · Dissertation, Research Design, and Structure</div>
     <h1>Quantitative Methods</h1>
     <div class="orn">✦ · ✦</div>
-    <div class="by">Dr Jerry Chen<br>Isaac Newton Trust Fellow in Regional Economics, Department of Land Economy<br>University of Cambridge</div>
+    <div class="by">Dr Jerry Chen<br>Isaac Newton Trust Fellow in Regional Economics · Department of Land Economy<br>University of Cambridge</div>
   </div>
-  <a class="btn primary" href="https://jerchenn.github.io/ideas/">Begin</a>
+  <p class="aux">Readings: Imai, Quantitative Social Science; Cunningham, The Causal Mixtape; Hernán, What If?; Angrist, Mostly Harmless Econometrics; Pearl, Causal Inference in Statistics.</p>
+  <p class="aux">Use the arrow keys or scroll to move through the slides. The pages linked below carry the rest of the lecture.</p>
 </header>
 
-<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">The session</span></div>
+<section class="frame slide" aria-label="Slide 2">
+  <div class="head"><span class="tag">Slide 02 · The session</span><h2>Some lines of music that actually have harmony</h2></div>
+  <div class="quote">There is a lot of noise in the world … and there is a lot of idiosyncrasy. But there are also regularities and phenomena. And what the data is going to be able to do, if there's enough of it, is uncover, in the mess and the noise of the world, some lines of music that actually have harmony. It's there, somewhere.<span class="who">Esther Duflo</span></div>
+</section>
 
-<section class="frame" aria-label="What today is for">
-  <span class="sign">What today is for</span>
+<section class="frame slide" aria-label="Slide 3">
+  <div class="head"><span class="tag">Slide 03 · The session</span><h2>All models are wrong, some are useful</h2></div>
+  <div class="quote">All models are wrong, some are useful.<span class="who">George E. P. Box</span></div>
+</section>
+
+<section class="frame slide" aria-label="Slide 4">
+  <div class="head"><span class="tag">Slide 04 · The session</span><h2>What today is for</h2></div>
   <div class="list">
-    <div><span>How to approach empirical research.</span></div>
-    <div><span>Use abstract statistical theory, when needed.</span></div>
-    <div><span>Ensure we understand the intuition, always.</span></div>
-    <div><span>Traverse from theoretical foundations to practical applications.</span></div>
-    <div><span>Getting you to think about data, and getting familiar with Stata.</span></div>
-    <div><span>Introducing you to some cool methods, to impress your cohort mates.</span></div>
+    <div><span>How to approach empirical research</span></div>
+    <div><span>Use abstract statistical theory, when needed</span></div>
+    <div><span>Ensure we understand the intuition, always</span></div>
+    <div><span>Traverse from theoretical foundations to practical applications</span></div>
+    <div><span>Getting you to think about data, and getting familiar with STATA</span></div>
+    <div><span>Introducing you to some cool methods, to impress your cohort mates</span></div>
   </div>
 </section>
 
-<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">The path</span></div>
+<section class="frame slide" aria-label="Slide 5">
+  <div class="head"><span class="tag">Slide 05 · The session</span><h2>Five sources this session draws on</h2></div>
+  <div class="list">
+    <div><span>Kosuke Imai: Quantitative Social Science. ISBN for iDiscover 978-0691175461</span></div>
+    <div><span>Scott Cunningham: The Causal Mixtape. <a href="https://mixtape.scunning.com">mixtape.scunning.com</a></span></div>
+    <div><span>Miguel Hernán: What If? <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">hsph.harvard.edu/miguel-hernan/causal-inference-book</a></span></div>
+    <div><span>Joshua Angrist: Mostly Harmless Econometrics. <a href="https://www.mostlyharmlesseconometrics.com">mostlyharmlesseconometrics.com</a></span></div>
+    <div><span>Judea Pearl: Causal Inference in Statistics. <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">ftp.cs.ucla.edu/pub/stat_ser/r350.pdf</a></span></div>
+  </div>
+</section>
 
-<section class="frame" aria-label="The lecture in order">
-  <span class="sign">Five pages, in order</span>
+<section class="frame slide" aria-label="Slide 6">
+  <div class="head"><span class="tag">Slide 06 · The session</span><h2>Today's agenda</h2></div>
   <div class="path">
-    <a class="stop" href="https://jerchenn.github.io/ideas/"><span class="n">I</span><span><b>Big Ideas</b><span class="d">Causation, the ladder of causal questions, the causal objective, and the divide between quantitative and qualitative research.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/orchard/"><span class="n">II</span><span><b>Orchard Census</b><span class="d">Statistics: population and sample, sampling strategies, descriptive and inferential statistics, the law of large numbers, and the central limit theorem.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/monty-hall/"><span class="n">III</span><span><b>Monty Hall</b><span class="d">Probability: a game to play, a simulation to run, Bayes' rule, and the step from the host's rule to the identification assumption.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/stata/"><span class="n">IV</span><span><b>The Do-File</b><span class="d">Stata: import, clean, describe, graph, and regress, then from an association to a difference in differences.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/designs/"><span class="n">V</span><span><b>Five Designs</b><span class="d">Randomised trials, difference in differences, synthetic control, regression discontinuity, and instrumental variables, through the studies the lecture uses.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/ideas/"><span class="n">Big ideas</span><span><b>Causation · Quant vs Qual</b><span class="d">Slides 7 to 18. Big Ideas.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/orchard/"><span class="n">Big ideas</span><span><b>Statistics</b><span class="d">Slides 19 to 26. Orchard Census.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/monty-hall/"><span class="n">Big ideas</span><span><b>Regression · Probability</b><span class="d">Slides 27 to 38. Monty Hall.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/stata/"><span class="n">Small details</span><span><b>STATA: importing, cleaning, describing, regressing</b><span class="d">Slides 40 to 61. The Do-File.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/designs/"><span class="n">Things I care about</span><span><b>RCT · DiD · SCM · RDD · IV</b><span class="d">Slides 63 to 77. Five Designs.</span></span><span class="go">Open</span></a>
   </div>
 </section>
 
-<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">Before the session</span></div>
-
-<section class="frame" aria-label="Before the session">
-  <span class="sign">Install Stata</span>
+<section class="frame slide" aria-label="Before the session">
+  <div class="head"><span class="tag">Slides 40 and 41 · STATA</span><h2>Install and activate Stata</h2></div>
   <div class="list">
-    <div><span>Install Stata from the Faculty's IT page: <a href="https://universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx">universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx</a></span></div>
-    <div><span>Activate Stata following the instructions here: <a href="https://universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf">universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf</a>. You may be asked to log in with your University Microsoft account.</span></div>
-    <div><span>Download the dataset for the Stata page from that page, and keep the file where you can find the path.</span></div>
+    <div><span>Install: <a href="https://universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx">universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx</a></span></div>
+    <div><span>Activate: <a href="https://universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf">universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf</a>. You may be asked to login with your University Microsoft Account.</span></div>
   </div>
-</section>
-
-<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">Sources</span></div>
-
-<section class="frame" aria-label="Sources">
-  <span class="sign">Five sources this session draws on</span>
+  <div class="head"><span class="tag">Slide 61 · STATA</span><h2>Stata resources</h2></div>
   <div class="list">
-    <div><span>Kosuke Imai, Quantitative Social Science. ISBN for iDiscover 978-0691175461.</span></div>
-    <div><span>Scott Cunningham, The Causal Mixtape. <a href="https://mixtape.scunning.com">mixtape.scunning.com</a></span></div>
-    <div><span>Miguel Hernán and James Robins, What If? <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">hsph.harvard.edu/miguel-hernan/causal-inference-book</a></span></div>
-    <div><span>Joshua Angrist and Jörn-Steffen Pischke, Mostly Harmless Econometrics. <a href="https://www.mostlyharmlesseconometrics.com">mostlyharmlesseconometrics.com</a></span></div>
-    <div><span>Judea Pearl, Causal Inference in Statistics. <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">ftp.cs.ucla.edu/pub/stat_ser/r350.pdf</a></span></div>
-  </div>
-  <span class="sign">Stata resources</span>
-  <div class="list">
-    <div><span>The help command. The documentation is excellent.</span></div>
-    <div><span>A web search. Many dedicated Stata users have met the problem before.</span></div>
-    <div><span>Princeton's Stata tutorials: <a href="https://www.princeton.edu/~otorres/Stata/">princeton.edu/~otorres/Stata</a></span></div>
-    <div><span>Statalist: <a href="https://www.statalist.org/forums">statalist.org/forums</a></span></div>
+    <div><span>Use the "help" command, excellent documentations</span></div>
+    <div><span>Google is your friend. Many dedicated STATA users</span></div>
+    <div><span><a href="https://www.princeton.edu/~otorres/Stata/">princeton.edu/~otorres/Stata</a></span></div>
+    <div><span><a href="https://www.statalist.org/forums">statalist.org/forums</a></span></div>
   </div>
 </section>
 
 <footer><span>Home</span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/ideas/">Big Ideas</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/orchard/">Orchard Census</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/monty-hall/">Monty Hall</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/stata/">The Do-File</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/designs/">Five Designs</a></span></footer>
 </div>
+
+<script>
+(function(){
+  const blocks=[...document.querySelectorAll('.wrap>header.frame, .wrap>section.frame')];
+  if(!blocks.length) return;
+  const c=document.createElement('div'); c.className='counter'; c.setAttribute('aria-live','polite'); document.body.appendChild(c);
+  const current=()=>{ let best=0,bd=1e9; blocks.forEach((b,i)=>{ const d=Math.abs(b.getBoundingClientRect().top-16); if(d<bd){bd=d;best=i;} }); return best; };
+  const show=()=>{ c.textContent=(current()+1)+' / '+blocks.length; };
+  const go=i=>{ i=Math.max(0,Math.min(blocks.length-1,i)); blocks[i].scrollIntoView({behavior:'smooth',block:'start'}); };
+  document.addEventListener('keydown',e=>{ const t=e.target; if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT')) return;
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '||e.key==='ArrowRight'){ e.preventDefault(); go(current()+1); }
+    else if(e.key==='ArrowUp'||e.key==='PageUp'||e.key==='ArrowLeft'){ e.preventDefault(); go(current()-1); }
+    else if(e.key==='Home'){ e.preventDefault(); go(0); } else if(e.key==='End'){ e.preventDefault(); go(blocks.length-1); } });
+  document.addEventListener('scroll',show,{passive:true}); show();
+})();
+</script>
 </body>
 </html>
