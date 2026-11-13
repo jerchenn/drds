@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quantitative Methods</title>
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png?v=3">
+<link rel="icon" type="image/png" sizes="256x256" href="img/favicon-256.png?v=3">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=3">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Landing page for the lecture. Butter wall, cream cabinets, rose and olive accents, pink footer. */
+:root{
+  --canvas:#F4DBB2; --canvas-lt:#F7E4C4; --canvas-dk:#EDD0A2; --pink:#E3A6AC;
+  --olive:#637040; --olive-lt:#9FB295; --rose:#A34860; --slate:#4F5D75;
+  --trim:#C8A030; --trim-dk:#9A7B24; --neutral:#F0E8D8; --label-bg:#FAF4E8;
+  --ink:#2C1F14; --ink-warm:#6E5140; --rule:#D8C8A0;
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --mono:"IBM Plex Mono","Courier New",monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--canvas);background-image:linear-gradient(172deg,var(--canvas-lt) 0%,var(--canvas) 55%,var(--canvas-dk) 100%);color:var(--ink);font-family:var(--display);font-size:19px;line-height:1.5;padding-block:36px 0;padding-inline:16px;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%239A7B24' stroke-width='1.3' stroke-linejoin='round'%3E%3Cpath d='M45 5 L85 45 L45 85 L5 45 Z'/%3E%3Cpath d='M45 20 L70 45 L45 70 L20 45 Z'/%3E%3Cpath d='M45 33 L57 45 L45 57 L33 45 Z'/%3E%3C/g%3E%3Ccircle cx='45' cy='45' r='2.2' fill='%239A7B24'/%3E%3C/svg%3E");background-size:90px 90px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+.wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;display:grid;gap:0;justify-items:center;text-align:center}
+.wrap>*{width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.1;text-wrap:balance;margin:0;text-transform:uppercase;letter-spacing:.18em;color:var(--rose)}
+h1{font-size:clamp(2.2rem,6.5vw,4rem);letter-spacing:.26em;padding-left:.26em}
+h3{font-size:1.15rem;letter-spacing:.14em}
+p{margin:0 auto;max-width:62ch}
+.aux{font-size:.95rem;color:var(--ink-warm);font-style:italic}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--trim);color:var(--rose);padding:3px 10px;border-radius:999px;background:var(--label-bg);display:inline-block}
+.sign{display:inline-block;background:var(--rose);color:var(--neutral);border:1px solid var(--trim);border-radius:999px;padding:6px 20px;font-size:.9rem;letter-spacing:.24em;text-transform:uppercase}
+.orn{color:var(--trim);letter-spacing:.6em;padding-left:.6em;font-size:.95rem}
+.node{display:grid;justify-items:center;padding-block:26px}
+.node .stem{width:1px;height:28px;background:var(--trim)}
+.node .dot{width:11px;height:11px;background:var(--trim);transform:rotate(45deg);margin:6px 0}
+.node .tag{margin-top:6px}
+.frame{position:relative;background:var(--neutral);border:1px solid var(--trim);border-radius:14px;padding:26px 22px 28px;display:grid;gap:16px;justify-items:center}
+.frame::after{content:"";position:absolute;inset:6px;border:1px solid var(--trim);border-radius:9px;pointer-events:none}
+.frame>*{position:relative;z-index:1}
+.hero{width:100%;max-width:760px;aspect-ratio:1400/636;overflow:hidden;border:1px solid var(--trim);border-radius:10px;position:relative;background:var(--label-bg)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:7px;border:1px solid var(--trim);border-radius:6px;pointer-events:none}
+.credit{font-size:.78rem;margin-top:-8px}
+.title{display:grid;gap:6px;justify-items:center}
+.title .small{font-size:clamp(.85rem,2vw,1.1rem);letter-spacing:.4em;padding-left:.4em;color:var(--rose);text-transform:uppercase;font-weight:300}
+.title .by{font-size:1rem;color:var(--ink-warm)}
+.btn{font:inherit;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;padding:9px 20px;border:1px solid var(--trim);background:var(--label-bg);color:var(--rose);cursor:pointer;border-radius:999px;text-decoration:none;display:inline-block}
+.btn.primary{background:var(--rose);color:var(--neutral)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.list{display:grid;gap:8px;max-width:62ch;margin:0 auto;text-align:left}
+.list>div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.list>div::before{content:"✦";color:var(--trim);font-size:.8rem}
+.list a{color:var(--rose);text-decoration:none;border-bottom:1px solid var(--trim);overflow-wrap:anywhere}
+.path{display:grid;gap:12px;width:100%;max-width:760px}
+.stop{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;text-align:left;border:1px solid var(--trim);border-radius:12px;background:var(--label-bg);padding:14px 16px;text-decoration:none;color:var(--ink)}
+.stop .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--rose);border:1px solid var(--trim);border-radius:999px;padding:3px 9px;background:var(--neutral)}
+.stop b{font-weight:400;color:var(--rose);letter-spacing:.14em;text-transform:uppercase;font-size:.9rem;display:block}
+.stop span.d{font-size:1rem}
+.stop .go{color:var(--rose);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--trim)}
+@media (max-width:560px){.stop{grid-template-columns:auto 1fr} .stop .go{display:none}}
+.ref{font-size:.85rem;color:var(--ink-warm)}
+footer{margin-top:34px;margin-inline:-16px;background:var(--pink);color:var(--rose);border-top:1px solid var(--trim);padding:18px 16px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
+footer .orn{color:var(--trim-dk);letter-spacing:.5em;padding-left:.5em}
+footer a{color:var(--rose);text-decoration:none;border-bottom:1px solid var(--trim)}
+</style>
+
+<div class="wrap">
+
+<header class="frame" aria-label="Title">
+  <div class="hero"><img src="img/arch.webp" alt="A tunnel of apple trees trained over iron arches, red apples hanging from the canopy, grass path beneath"></div>
+  <p class="aux credit">Photograph: BBC</p>
+  <div class="title">
+    <div class="small">DRDS · Michaelmas · Week 7</div>
+    <h1>Quantitative Methods</h1>
+    <div class="orn">✦ · ✦</div>
+    <div class="by">Dr Jerry Chen<br>Isaac Newton Trust Fellow in Regional Economics, Department of Land Economy<br>University of Cambridge</div>
+  </div>
+  <a class="btn primary" href="https://jerchenn.github.io/ideas/">Begin</a>
+</header>
+
+<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">The session</span></div>
+
+<section class="frame" aria-label="What today is for">
+  <span class="sign">What today is for</span>
+  <div class="list">
+    <div><span>How to approach empirical research.</span></div>
+    <div><span>Use abstract statistical theory, when needed.</span></div>
+    <div><span>Ensure we understand the intuition, always.</span></div>
+    <div><span>Traverse from theoretical foundations to practical applications.</span></div>
+    <div><span>Getting you to think about data, and getting familiar with Stata.</span></div>
+    <div><span>Introducing you to some cool methods, to impress your cohort mates.</span></div>
+  </div>
+</section>
+
+<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">The path</span></div>
+
+<section class="frame" aria-label="The lecture in order">
+  <span class="sign">Five pages, in order</span>
+  <div class="path">
+    <a class="stop" href="https://jerchenn.github.io/ideas/"><span class="n">I</span><span><b>Big Ideas</b><span class="d">Causation, the ladder of causal questions, the causal objective, and the divide between quantitative and qualitative research.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/orchard/"><span class="n">II</span><span><b>Orchard Census</b><span class="d">Statistics: population and sample, sampling strategies, descriptive and inferential statistics, the law of large numbers, and the central limit theorem.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/monty-hall/"><span class="n">III</span><span><b>Monty Hall</b><span class="d">Probability: a game to play, a simulation to run, Bayes' rule, and the step from the host's rule to the identification assumption.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/stata/"><span class="n">IV</span><span><b>The Do-File</b><span class="d">Stata: import, clean, describe, graph, and regress, then from an association to a difference in differences.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/designs/"><span class="n">V</span><span><b>Five Designs</b><span class="d">Randomised trials, difference in differences, synthetic control, regression discontinuity, and instrumental variables, through the studies the lecture uses.</span></span><span class="go">Open</span></a>
+  </div>
+</section>
+
+<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">Before the session</span></div>
+
+<section class="frame" aria-label="Before the session">
+  <span class="sign">Install Stata</span>
+  <div class="list">
+    <div><span>Install Stata from the Faculty's IT page: <a href="https://universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx">universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx</a></span></div>
+    <div><span>Activate Stata following the instructions here: <a href="https://universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf">universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf</a>. You may be asked to log in with your University Microsoft account.</span></div>
+    <div><span>Download the dataset for the Stata page from that page, and keep the file where you can find the path.</span></div>
+  </div>
+</section>
+
+<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">Sources</span></div>
+
+<section class="frame" aria-label="Sources">
+  <span class="sign">Five sources this session draws on</span>
+  <div class="list">
+    <div><span>Kosuke Imai, Quantitative Social Science. ISBN for iDiscover 978-0691175461.</span></div>
+    <div><span>Scott Cunningham, The Causal Mixtape. <a href="https://mixtape.scunning.com">mixtape.scunning.com</a></span></div>
+    <div><span>Miguel Hernán and James Robins, What If? <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">hsph.harvard.edu/miguel-hernan/causal-inference-book</a></span></div>
+    <div><span>Joshua Angrist and Jörn-Steffen Pischke, Mostly Harmless Econometrics. <a href="https://www.mostlyharmlesseconometrics.com">mostlyharmlesseconometrics.com</a></span></div>
+    <div><span>Judea Pearl, Causal Inference in Statistics. <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">ftp.cs.ucla.edu/pub/stat_ser/r350.pdf</a></span></div>
+  </div>
+  <span class="sign">Stata resources</span>
+  <div class="list">
+    <div><span>The help command. The documentation is excellent.</span></div>
+    <div><span>A web search. Many dedicated Stata users have met the problem before.</span></div>
+    <div><span>Princeton's Stata tutorials: <a href="https://www.princeton.edu/~otorres/Stata/">princeton.edu/~otorres/Stata</a></span></div>
+    <div><span>Statalist: <a href="https://www.statalist.org/forums">statalist.org/forums</a></span></div>
+  </div>
+</section>
+
+<footer><span>Home</span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/ideas/">Big Ideas</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/orchard/">Orchard Census</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/monty-hall/">Monty Hall</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/stata/">The Do-File</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/designs/">Five Designs</a></span></footer>
+</div>
+</body>
+</html>
