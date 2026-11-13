@@ -52,7 +52,8 @@ p{margin:0 auto;max-width:62ch}
 .credit{font-size:.78rem;margin-top:-8px}
 .title{display:grid;gap:6px;justify-items:center}
 .title .small{font-size:clamp(.85rem,2vw,1.1rem);letter-spacing:.4em;padding-left:.4em;color:var(--rose);text-transform:uppercase;font-weight:300}
-.title .by{font-size:1rem;color:var(--ink-warm)}
+.title .by{font-size:1rem;color:var(--ink-warm);line-height:1.5}
+.credits{font-size:.72rem;color:var(--ink-warm);margin-top:18px}
 .slide .head{display:grid;gap:8px;justify-items:center}
 .person{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center;width:100%;max-width:760px;text-align:left}
 .person img{width:100%;border:1px solid var(--trim);border-radius:10px;display:block}
@@ -87,47 +88,38 @@ footer .orn{color:var(--trim-dk);letter-spacing:.5em;padding-left:.5em}
 footer a{color:var(--rose);text-decoration:none;border-bottom:1px solid var(--trim)}
 
 /* slide spacing: each block fills the window; arrow keys move between blocks */
-.wrap>header.frame,.wrap>section.frame{scroll-margin-top:16px;min-height:calc(100vh - 56px);align-content:center}
+.wrap>header.frame,.wrap>section.frame{scroll-margin-top:16px}
 .counter{position:fixed;right:16px;bottom:16px;z-index:9;font-family:var(--mono);font-size:11px;letter-spacing:.2em;padding:6px 12px;border:1px solid var(--trim);border-radius:999px;background:var(--label-bg);color:var(--rose)}
-@media (max-width:560px){.wrap>header.frame,.wrap>section.frame{min-height:0}}
 </style>
 
 <div class="wrap">
 
-<header class="frame slide" aria-label="Slide 1">
-  <div class="hero"><img src="img/eagle.webp" alt="The Eagle Inn, Bene't Street, Cambridge: the galleried courtyard with its first-floor balcony, photographed in black and white"></div>
-  <p class="aux credit">The Eagle Inn, exterior, c. 1600 and c. 1800. Plate 136 of a printed inventory of the historic buildings of Cambridge.</p>
+<header class="frame" aria-label="Title">
+  <div class="hero"><img src="img/eagle.webp" alt="The Eagle Inn, Bene't Street, Cambridge, photographed in black and white"></div>
   <div class="title">
-    <div class="small">DRDS · Michaelmas · Week 6 · Dissertation, Research Design, and Structure</div>
+    <div class="small">DRDS · Michaelmas · Week 6</div>
     <h1>Quantitative Methods</h1>
     <div class="orn">✦ · ✦</div>
-    <div class="by">Dr Jerry Chen<br>Isaac Newton Trust Fellow in Regional Economics · Department of Land Economy<br>University of Cambridge</div>
+    <div class="by">Dr Jerry Chen<br>Isaac Newton Trust Fellow &amp; Senior Teaching Associate<br>Department of Land Economy, University of Cambridge</div>
   </div>
-  <p class="aux">Readings: Imai, Quantitative Social Science; Cunningham, The Causal Mixtape; Hernán, What If?; Angrist, Mostly Harmless Econometrics; Pearl, Causal Inference in Statistics.</p>
-  <div class="qr"><div id="qr" aria-label="QR code for this page"></div><div class="aux">Scan to open this page<br><span class="url">jerchenn.github.io/drds</span></div></div>
-  <p class="aux">Use the arrow keys or scroll to move through the slides.</p>
+  <div class="qr"><div id="qr" aria-label="QR code for this page"></div><div class="aux">Scan to open<br><span class="url">jerchenn.github.io/drds</span></div></div>
 </header>
 
-<section class="frame slide" aria-label="Slide 2">
-  <div class="head"><span class="tag">The session</span><h2>Some lines of music that actually have harmony</h2></div>
+<div class="node"><div class="stem"></div><div class="dot"></div><span class="tag">The session</span></div>
+
+<section class="frame" aria-label="Esther Duflo">
   <div class="person">
-    <img src="img/duflo.webp" alt="Esther Duflo, standing, in a patterned jacket">
+    <img src="img/duflo.webp" alt="Esther Duflo">
     <div class="bio">
       <h3>Esther Duflo</h3>
-      <p>Abdul Latif Jameel Professor of Poverty Alleviation and Development Economics at MIT, and co-founder in 2003 of J-PAL, the Abdul Latif Jameel Poverty Action Lab. With Abhijit Banerjee and Michael Kremer she received the 2019 Nobel Memorial Prize in Economic Sciences for the experimental approach to alleviating global poverty, as the youngest recipient and the second woman. The immunisation trial on the Five Designs page is her work with Banerjee, Glennerster, and Kothari.</p>
-      <p class="aux credit">Photograph: Palácio do Planalto, 27 June 2024, CC BY 2.0, via Wikimedia Commons</p>
+      <p>In 2003 Esther Duflo founded J-PAL at MIT with Abhijit Banerjee and Sendhil Mullainathan. J-PAL tests anti-poverty programmes with randomised trials run jointly with governments and charities; its affiliates have completed more than a thousand such evaluations, and programmes they found to work have reached hundreds of millions of people. Before J-PAL the randomised trial belonged to medicine. Duflo made it the standard test of what works in development economics. She shared the 2019 Nobel Memorial Prize in Economic Sciences with Banerjee and Michael Kremer, the youngest person to receive it. The immunisation trial on the Five Designs page is one of hers.</p>
     </div>
   </div>
   <div class="quote">There is a lot of noise in the world … and there is a lot of idiosyncrasy. But there are also regularities and phenomena. And what the data is going to be able to do, if there's enough of it, is uncover, in the mess and the noise of the world, some lines of music that actually have harmony. It's there, somewhere.<span class="who">Esther Duflo</span></div>
 </section>
 
-<section class="frame slide" aria-label="Slide 3">
-  <div class="head"><span class="tag">The session</span><h2>All models are wrong, some are useful</h2></div>
-  <div class="quote">All models are wrong, some are useful.<span class="who">George E. P. Box</span></div>
-</section>
-
-<section class="frame slide" aria-label="Slide 4">
-  <div class="head"><span class="tag">The session</span><h2>What today is for</h2></div>
+<section class="frame" aria-label="What today is for">
+  <span class="sign">What today is for</span>
   <div class="list">
     <div><span>How to approach empirical research</span></div>
     <div><span>Use abstract statistical theory, when needed</span></div>
@@ -138,42 +130,38 @@ footer a{color:var(--rose);text-decoration:none;border-bottom:1px solid var(--tr
   </div>
 </section>
 
-<section class="frame slide" aria-label="Slide 5">
-  <div class="head"><span class="tag">The session</span><h2>Five sources this session draws on</h2></div>
-  <div class="list">
-    <div><span>Kosuke Imai: Quantitative Social Science. ISBN for iDiscover 978-0691175461</span></div>
-    <div><span>Scott Cunningham: The Causal Mixtape. <a href="https://mixtape.scunning.com">mixtape.scunning.com</a></span></div>
-    <div><span>Miguel Hernán: What If? <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">hsph.harvard.edu/miguel-hernan/causal-inference-book</a></span></div>
-    <div><span>Joshua Angrist: Mostly Harmless Econometrics. <a href="https://www.mostlyharmlesseconometrics.com">mostlyharmlesseconometrics.com</a></span></div>
-    <div><span>Judea Pearl: Causal Inference in Statistics. <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">ftp.cs.ucla.edu/pub/stat_ser/r350.pdf</a></span></div>
-  </div>
-</section>
-
-<section class="frame slide" aria-label="Slide 6">
-  <div class="head"><span class="tag">The session</span><h2>Today's agenda</h2></div>
+<section class="frame" aria-label="Today's agenda">
+  <span class="sign">Today's agenda</span>
   <div class="path">
-    <a class="stop" href="https://jerchenn.github.io/ideas/"><span class="n">Big ideas</span><span><b>Causation · Quant vs Qual</b><span class="d">Big Ideas.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/orchard/"><span class="n">Big ideas</span><span><b>Statistics</b><span class="d">Orchard Census.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/monty-hall/"><span class="n">Big ideas</span><span><b>Regression · Probability</b><span class="d">Monty Hall.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/stata/"><span class="n">Small details</span><span><b>STATA: importing, cleaning, describing, regressing</b><span class="d">The Do-File.</span></span><span class="go">Open</span></a>
-    <a class="stop" href="https://jerchenn.github.io/designs/"><span class="n">Things I care about</span><span><b>RCT · DiD · SCM · RDD · IV</b><span class="d">Five Designs.</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/ideas/"><span class="n">Big ideas</span><span><b>Causation · Quant vs Qual</b><span class="d">Big Ideas</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/orchard/"><span class="n">Big ideas</span><span><b>Statistics</b><span class="d">Orchard Census</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/monty-hall/"><span class="n">Big ideas</span><span><b>Regression · Probability</b><span class="d">Monty Hall</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/stata/"><span class="n">Small details</span><span><b>STATA</b><span class="d">The Do-File</span></span><span class="go">Open</span></a>
+    <a class="stop" href="https://jerchenn.github.io/designs/"><span class="n">Things I care about</span><span><b>RCT · DiD · SCM · RDD · IV</b><span class="d">Five Designs</span></span><span class="go">Open</span></a>
   </div>
 </section>
 
-<section class="frame slide" aria-label="Before the session">
-  <div class="head"><span class="tag">STATA</span><h2>Install and activate Stata</h2></div>
+<section class="frame" aria-label="Sources">
+  <span class="sign">Sources</span>
   <div class="list">
-    <div><span>Install: <a href="https://universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx">universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx</a></span></div>
-    <div><span>Activate: <a href="https://universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf">universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf</a>. You may be asked to login with your University Microsoft Account.</span></div>
-  </div>
-  <div class="head"><span class="tag">STATA</span><h2>Stata resources</h2></div>
-  <div class="list">
-    <div><span>Use the "help" command, excellent documentations</span></div>
-    <div><span>Google is your friend. Many dedicated STATA users</span></div>
-    <div><span><a href="https://www.princeton.edu/~otorres/Stata/">princeton.edu/~otorres/Stata</a></span></div>
-    <div><span><a href="https://www.statalist.org/forums">statalist.org/forums</a></span></div>
+    <div><span>Imai, Quantitative Social Science. ISBN 978-0691175461</span></div>
+    <div><span>Cunningham, The Causal Mixtape. <a href="https://mixtape.scunning.com">mixtape.scunning.com</a></span></div>
+    <div><span>Hernán and Robins, What If? <a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/">hsph.harvard.edu/miguel-hernan/causal-inference-book</a></span></div>
+    <div><span>Angrist and Pischke, Mostly Harmless Econometrics. <a href="https://www.mostlyharmlesseconometrics.com">mostlyharmlesseconometrics.com</a></span></div>
+    <div><span>Pearl, Causal Inference in Statistics. <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r350.pdf">ftp.cs.ucla.edu/pub/stat_ser/r350.pdf</a></span></div>
   </div>
 </section>
+
+<section class="frame" aria-label="Stata">
+  <span class="sign">Stata</span>
+  <div class="list">
+    <div><span>Install: <a href="https://universityofcambridgecloud.sharepoint.com/sites/UoC_EconomicsHistoryITSupportSite/SitePages/Stata.aspx">Faculty IT page</a></span></div>
+    <div><span>Activate: <a href="https://universityofcambridgecloud.sharepoint.com/:b:/r/sites/ECON/OfficeDrive/Stata/501809305308.pdf">instructions (University login)</a></span></div>
+    <div><span>Help: the help command; <a href="https://www.princeton.edu/~otorres/Stata/">princeton.edu/~otorres/Stata</a>; <a href="https://www.statalist.org/forums">statalist.org/forums</a></span></div>
+  </div>
+</section>
+
+<p class="credits">Images: The Eagle Inn, plate 136 of a printed inventory of Cambridge buildings; Esther Duflo, Palácio do Planalto, CC BY 2.0.</p>
 
 <footer><span>Home</span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/ideas/">Big Ideas</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/orchard/">Orchard Census</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/monty-hall/">Monty Hall</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/stata/">The Do-File</a></span><span class="orn">✦</span><span><a href="https://jerchenn.github.io/designs/">Five Designs</a></span></footer>
 </div>
